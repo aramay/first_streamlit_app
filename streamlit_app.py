@@ -12,7 +12,7 @@ st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 fruits_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
 # add pick list here
-st.multiselect("Pick some fruits ", list(fruits_list))
+st.multiselect("Pick some fruits ", list(fruits_list.index))
 
 # display the table
 st.dataframe(fruits_list)
