@@ -15,7 +15,8 @@ fruits_list = fruits_list.set_index('Fruit')
 
 
 # add pick list here
-st.multiselect("Pick some fruits ", list(fruits_list.index), ['Avocado', 'Strawberries'])
+fruits_selected = st.multiselect("Pick some fruits ", list(fruits_list.index), ['Avocado', 'Strawberries'])
 
+fruits_to_show = fruits_list.loc[fruits_selected]
 # display the table
-st.dataframe(fruits_list)
+st.dataframe(fruits_to_show)
