@@ -10,6 +10,9 @@ st.text('Hard-Boiled Free-Range Egg')
 st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 fruits_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+# pick fruits by name
+fruits_list = fruits_list.set_index('Fruit')
+
 
 # add pick list here
 st.multiselect("Pick some fruits ", list(fruits_list.index))
