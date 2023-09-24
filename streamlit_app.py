@@ -34,7 +34,7 @@ def get_fruitvice_data(this_fruit_choice):
 
   # take the json version on response and normalize it
   fruityvice_normalized = pd.json_normalize(fruityvice_res.json())
-  return fruitvice_normalized
+  return fruityvice_normalized
   # output it - as a table
   #st.dataframe(fruityvice_normalized)
 
