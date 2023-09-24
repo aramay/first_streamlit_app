@@ -24,6 +24,13 @@ st.dataframe(fruits_to_show)
 
 st.header('Fruityvice Fruit Advice')
 
-fruityvice_res = re.get('https://www.fruityvice.com/api/fruit/watermelon')
+fruityvice_res = re.get('https://www.fruityvice.com/api/fruit/' + 'kiwi')
 
 st.text(fruityvice_res.json())
+
+# take the json version on response and normalize it
+
+fruityvice_normalized = pd.json_normalize(fruityvice_res.json())
+
+# output it - as a table
+st.dataframe(fruityvice_normalize)
