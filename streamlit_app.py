@@ -22,8 +22,8 @@ fruits_to_show = fruits_list.loc[fruits_selected]
 # display the table
 st.dataframe(fruits_to_show)
 
-streamlit.header('Fruityvice Fruit Advice')
+st.header('Fruityvice Fruit Advice')
 
 fruityvice_res = re.get('https://www.fruityvice.com/api/fruit/watermelon')
 
-streamlit.text(fruityvice_res.json())
+st.text(fruityvice_res.json())
