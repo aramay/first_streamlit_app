@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import requests as re
 
 st.title("My parents kitchen")
 
@@ -20,3 +21,9 @@ fruits_selected = st.multiselect("Pick some fruits ", list(fruits_list.index), [
 fruits_to_show = fruits_list.loc[fruits_selected]
 # display the table
 st.dataframe(fruits_to_show)
+
+streamlit.header('Fruityvice Fruit Advice')
+
+fruityvice_res = re.get('https://www.fruityvice.com/api/fruit/watermelon')
+
+streamlit.text(fruityvice_res.json())
