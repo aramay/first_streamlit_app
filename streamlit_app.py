@@ -47,3 +47,6 @@ my_data_rows = my_cur.fetchall()
 #st.text("Hello from Snowflake:")
 st.text("Fruit load list contains")
 st.dataframe(my_data_rows)
+
+
+fruit_choice = st.text_input('What fruit would you like to add?', 'Kiwi')
