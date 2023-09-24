@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests as re
-import snowflake.connector as sc
+import snowflake.connector
 
 st.title("My parents kitchen")
 
@@ -38,7 +38,7 @@ fruityvice_normalized = pd.json_normalize(fruityvice_res.json())
 # output it - as a table
 st.dataframe(fruityvice_normalized)
 
-my_cnx = sc.connector.connect(**streamlit.secrets["snowflake"])
+my_cnx = snowflake.connector.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
