@@ -30,6 +30,5 @@ fruityvice_res = re.get('https://www.fruityvice.com/api/fruit/' + 'kiwi')
 
 # take the json version on response and normalize it
 fruityvice_normalized = pd.json_normalize(fruityvice_res.json())
-print(fruityvice_normalized)
 # output it - as a table
-st.dataframe(fruityvice_normalize)
+st.dataframe(fruityvice_normalized)
