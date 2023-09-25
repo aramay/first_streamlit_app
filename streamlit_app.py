@@ -75,12 +75,12 @@ def insert_row_snowflake(new_fruit):
 #my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
 #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("select * from fruit_load_list")
+#my_cur.execute("select * from fruit_load_list")
 #my_data_row = my_cur.fetchone()
-my_data_rows = my_cur.fetchall()
+#my_data_rows = my_cur.fetchall()
 #st.text("Hello from Snowflake:")
-st.text("Fruit load list contains")
-st.dataframe(my_data_rows)
+#st.text("Fruit load list contains")
+#st.dataframe(my_data_rows)
 
 
 add_my_fruit = st.text_input('What fruit would you like to add?')
