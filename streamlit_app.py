@@ -71,7 +71,10 @@ def insert_row_snowflake(new_fruit):
     my_cur.execute("insert into fruit_load_list values ('" + new_fruit + "')")
     return 'Thanks for adding ' + new_fruit
   
-
+def get_fruit_load_list():
+  with my_cnx.cursor() as my_cur:
+    my_data_rows = my_cur.execute("select * from fruit_load_list")
+    return my_data_rows
 #my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
 #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
@@ -93,7 +96,7 @@ if st.button('Add a fruit to the list'):
 # add a button to load the fruit
 if st.button('Get fruit List'):
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-  my_data_rows = my_cnx.execute("select * from fruit_load_list")
+  my_data_rows = get_fruit_load_list()
   my_cnx.close()
   st.dataframe(my_data_rows)
 
