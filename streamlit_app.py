@@ -75,7 +75,9 @@ def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
     #my_data_rows = my_cur.execute("select * from fruit_load_list")
     # return my_cur.execute("select * from fruit_load_list")
-    return my_cur.fetchone()
+    
+    my_data_rows = my_cur.fetchone()
+    return  my_data_rows
 #my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
 #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
