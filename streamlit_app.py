@@ -64,12 +64,12 @@ except URLError as e:
 
 
 
-my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
+#my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 #stop adding fruitsst.stop() 
 def insert_row_snowflake(new_fruit):
-  with my_cnx.cursor() as my_cur
-  my_cur.execute("insert into fruit_load_list values ('from streamlit')")
-  return 'Thanks for adding ' + new_fruit
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+    return 'Thanks for adding ' + new_fruit
   
 
 #my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
